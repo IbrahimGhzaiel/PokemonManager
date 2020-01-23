@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MonServiceService} from '../../Services/mon-service.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonsComponent implements OnInit {
 
-  constructor() { }
 
+  msg: string;
+  pokemons ;
+  constructor(private service: MonServiceService) { }
+  obtenirPokemon() {
+    this.pokemons = this.service.obtenirPokemon();
+  }
   ngOnInit() {
+    this.obtenirPokemon();
   }
 
 }

@@ -1,1 +1,10 @@
-<p>pokemons works!</p>
+<h2> Les six premiers Pokémons </h2>
+<p> Dans l'ordre du pokedex : </p>
+
+<h5 *ngIf="msg"> Le Pokémon sélectionné est :  {{msg}}</h5>
+<div class="row">
+<p *ngFor="let unObj of pokemons" class="col-4">
+<app-pokemon [unObjetPokemon]= unObj (unEvenement)="msg=$event"></app-pokemon>
+</p>
+</div>
+
