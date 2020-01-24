@@ -11,13 +11,15 @@ import LocaleFR from '@angular/common/locales/fr';
 
 import {FormsModule} from '@angular/forms';
 import { PokemonComponent } from './composants/pokemon/pokemon.component';
+import { FormulaireComponent } from './composants/formulaire/formulaire.component';
 registerLocaleData(LocaleFR);
 @NgModule({
   declarations: [
     AppComponent,
     GenerationsComponent,
     PokemonsComponent,
-    PokemonComponent
+    PokemonComponent,
+    FormulaireComponent
   ],
   imports: [
     BrowserModule,

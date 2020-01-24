@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MonServiceService} from '../../Services/mon-service.service';
+import {Pokemon} from '../../modeles/pokemon';
 
 @Component({
   selector: 'app-pokemons',
@@ -8,15 +9,25 @@ import {MonServiceService} from '../../Services/mon-service.service';
 })
 export class PokemonsComponent implements OnInit {
 
-
+  cpteur: number;
   msg: string;
-  pokemons ;
+  pokemons: Array<Pokemon> ;
+  private nomReche: string;
+
+initTableau() {
+  this.obtenirPokemon();
+  this.cpteur =this.service.cpt();
+}
   constructor(private service: MonServiceService) { }
   obtenirPokemon() {
     this.pokemons = this.service.obtenirPokemon();
   }
   ngOnInit() {
-    this.obtenirPokemon();
+    this.initTableau();
   }
 
+  envoyer(nomReche) {
+ this.pokemons = this.service.triPokemon(nomReche);
+
+  }
 }

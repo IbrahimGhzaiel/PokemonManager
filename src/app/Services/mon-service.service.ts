@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Pokemon} from '../modeles/pokemon';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +56,22 @@ export class MonServiceService {
     }
   ]
   constructor() { }
-  obtenirPokemon() {
+  //Compter le nbre de pokemons
+  cpt(): number {
+    const nbre = this.pokemons.length;
+    return nbre;
+    //ici on peut mettre juste return this.pokemons.length; au lieu de les lignes 61 et 62
+  }
+
+  //Retourner le tableau de pokemons
+  obtenirPokemon(): Array<Pokemon> {
     return this.pokemons;
+  }
+
+
+ triPokemon(nomReche: string) {
+   return this.pokemons.filter(pokemons => pokemons.nom === nomReche);
+    //if (this.pokemons.indexOf(nomReche));
+
   }
 }
