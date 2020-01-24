@@ -69,8 +69,9 @@ export class MonServiceService {
   }
 
 
- triPokemon(nomReche: string) {
-   return this.pokemons.filter(pokemons => pokemons.nom === nomReche);
+ triPokemon(nomReche) {
+    let  regex = new RegExp(nomReche,'gi');
+   return this.pokemons.filter(p => p.nom.match(regex));
     //if (this.pokemons.indexOf(nomReche));
 
   }

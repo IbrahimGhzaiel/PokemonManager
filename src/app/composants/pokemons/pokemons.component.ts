@@ -30,4 +30,8 @@ initTableau() {
  this.pokemons = this.service.triPokemon(nomReche);
 
   }
+
+  reinitRecherche() {
+  this.pokemons = this.service.obtenirPokemon();
+  }
 }
